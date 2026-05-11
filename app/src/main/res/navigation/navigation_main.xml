@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_main.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.lin_new_project.fragment.HomeFragment"
+        android:label="HomeFragment" >
+
+        <action
+            android:id="@+id/action_homeFragment_to_textFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/textFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_roomFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/roomFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_languageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ttsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/ttsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_signatureFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/signatureFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_timeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/timeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_MPAndroidChartFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/MPAndroidChartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewPagerFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recordingFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/recordingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.example.lin_new_project.fragment.TextFragment"
+        android:label="TextFragment" />
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.example.lin_new_project.fragment.RoomFragment"
+        android:label="RoomFragment" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.example.lin_new_project.fragment.LanguageFragment"
+        android:label="LanguageFragment" />
+    <fragment
+        android:id="@+id/ttsFragment"
+        android:name="com.example.lin_new_project.fragment.TtsFragment"
+        android:label="TtsFragment" />
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.example.lin_new_project.fragment.SignatureFragment"
+        android:label="SignatureFragment" />
+    <fragment
+        android:id="@+id/timeFragment"
+        android:name="com.example.lin_new_project.fragment.TimeFragment"
+        android:label="TimeFragment" />
+    <fragment
+        android:id="@+id/MPAndroidChartFragment"
+        android:name="com.example.lin_new_project.fragment.MPAndroidChartFragment"
+        android:label="MPAndroidChartFragment" />
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.lin_new_project.fragment.ViewPagerFragment"
+        android:label="ViewPagerFragment" />
+    <fragment
+        android:id="@+id/recordingFragment"
+        android:name="com.example.lin_new_project.fragment.RecordingFragment"
+        android:label="RecordingFragment" />
+</navigation>
