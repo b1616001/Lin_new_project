@@ -2,8 +2,11 @@ package com.example.lin_new_project;
 
 import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
+import static com.example.lin_new_project.MyApplication.nfc;
+
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,6 +26,8 @@ import androidx.navigation.Navigation;
 
 import com.example.lin_new_project.databinding.ActivityMainBinding;
 import com.example.lin_new_project.fun.LanguageUtils;
+import com.example.lin_new_project.fun.MsgEvent;
+import com.example.lin_new_project.fun.RxBus;
 import com.example.lin_new_project.viewBinding.BaseBindingActivity;
 import com.example.lin_new_project.webService.WebApi;
 
@@ -69,6 +74,13 @@ public class MainActivity extends BaseBindingActivity<ActivityMainBinding> {//41
             }
         }
         return super.onKeyDown(keyCode, event);
+    }
+    @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (currentFragment.equals("NfcFragment")){
+            RxBus.getInstance().post(new MsgEvent(nfc,  intent));
+        }
     }
     public void requestPermission() {
         // 如果裝置版本是6.0（包含）以上

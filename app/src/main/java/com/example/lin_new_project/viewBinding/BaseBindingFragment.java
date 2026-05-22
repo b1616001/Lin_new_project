@@ -2,6 +2,7 @@ package com.example.lin_new_project.viewBinding;
 
 import static com.example.lin_new_project.MainActivity.mainActivity;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
+
+import com.example.lin_new_project.fun.ToastMethod;
 
 public abstract class BaseBindingFragment<VB extends ViewBinding> extends Fragment {
     private VB binding;
@@ -59,6 +62,9 @@ public abstract class BaseBindingFragment<VB extends ViewBinding> extends Fragme
     }
     public void setLog(String mes){
         Log.d(getClass().getSimpleName(),mes );
+    }
+    public  void showToast( String msg) {
+        ToastMethod.showToast(getContext(), msg);
     }
 
 }

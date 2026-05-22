@@ -7,6 +7,7 @@ import com.example.lin_new_project.room.DatabaseManager;
 import com.tencent.mmkv.MMKV;
 
 public class MyApplication extends Application {
+    public static final int nfc = 1001;
     public volatile static MyApplication instance;
     public MmkvUtils mmkvUtils;
     @Override

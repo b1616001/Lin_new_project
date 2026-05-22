@@ -54,6 +54,36 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:destination="@id/recordingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_nfcFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/nfcFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_simpleItemFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/simpleItemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_textUrlFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/textUrlFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zbarFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/zbarFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notebookFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/notebookFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_qrcodeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/qrcodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/textFragment"
@@ -91,4 +121,28 @@
         android:id="@+id/recordingFragment"
         android:name="com.example.lin_new_project.fragment.RecordingFragment"
         android:label="RecordingFragment" />
+    <fragment
+        android:id="@+id/nfcFragment"
+        android:name="com.example.lin_new_project.fragment.NfcFragment"
+        android:label="NfcFragment" />
+    <fragment
+        android:id="@+id/simpleItemFragment"
+        android:name="com.example.lin_new_project.fragment.SimpleItemFragment"
+        android:label="SimpleItemFragment" />
+    <fragment
+        android:id="@+id/textUrlFragment"
+        android:name="com.example.lin_new_project.fragment.TextUrlFragment"
+        android:label="TextUrlFragment" />
+    <fragment
+        android:id="@+id/zbarFragment"
+        android:name="com.example.lin_new_project.fragment.ZbarFragment"
+        android:label="ZbarFragment" />
+    <fragment
+        android:id="@+id/notebookFragment"
+        android:name="com.example.lin_new_project.fragment.NotebookFragment"
+        android:label="NotebookFragment" />
+    <fragment
+        android:id="@+id/qrcodeFragment"
+        android:name="com.example.lin_new_project.fragment.QrcodeFragment"
+        android:label="QrcodeFragment" />
 </navigation>
