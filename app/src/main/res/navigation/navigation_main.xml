@@ -84,6 +84,31 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:destination="@id/qrcodeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_volumetFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/volumetFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_screenFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/screenFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gifFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/gifFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/webViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_GLSurfaceFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/GLSurfaceFragment" />
     </fragment>
     <fragment
         android:id="@+id/textFragment"
@@ -145,4 +170,24 @@
         android:id="@+id/qrcodeFragment"
         android:name="com.example.lin_new_project.fragment.QrcodeFragment"
         android:label="QrcodeFragment" />
+    <fragment
+        android:id="@+id/volumetFragment"
+        android:name="com.example.lin_new_project.fragment.VolumetFragment"
+        android:label="VolumetFragment" />
+    <fragment
+        android:id="@+id/screenFragment"
+        android:name="com.example.lin_new_project.fragment.ScreenFragment"
+        android:label="ScreenFragment" />
+    <fragment
+        android:id="@+id/gifFragment"
+        android:name="com.example.lin_new_project.fragment.GifFragment"
+        android:label="GifFragment" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.lin_new_project.fragment.WebViewFragment"
+        android:label="WebViewFragment" />
+    <fragment
+        android:id="@+id/GLSurfaceFragment"
+        android:name="com.example.lin_new_project.fragment.GLSurfaceFragment"
+        android:label="GLSurfaceFragment" />
 </navigation>

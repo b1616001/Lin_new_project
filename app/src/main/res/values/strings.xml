@@ -20,19 +20,19 @@
         <item>11.ViewFlipper</item>
         <item>12.錄音</item>
         <item>13.NFC</item>
-        <item>14.listview拖曳</item>
+        <item>14.RecyclerView拖曳</item>
         <item>15.連線狀態</item>
         <item>16.自定義AlertDialog</item>
         <item>17.記事本</item>
         <item>18.字串含有URL，並提供凡藍點擊功能</item>
-        <item>19.WebSocke</item>
+        <item>19.自定義APopupWindow</item>
         <item>20.Qrcode產生器</item>
         <item>21.震動、鈴聲</item>
         <item>22.屏幕休眠開關</item>
         <item>23.隱藏標題列、狀態列</item>
         <item>24.Gif動畫</item>
         <item>25.WebView</item>
-        <item>26.ViewPager</item>
+        <item>26.Window客製化</item>
         <item>27.時區轉換</item>
         <item>28.設定鬧鐘</item>
         <item>29.GLSurface</item>

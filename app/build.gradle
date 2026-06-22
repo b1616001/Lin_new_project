@@ -101,5 +101,7 @@ dependencies {
 //    implementation 'me.dm7.barcodescanner:zbar:1.9.13'
 //    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation files('libs/commons-lang3-3.11.jar')
 
 }

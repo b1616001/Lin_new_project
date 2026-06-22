@@ -3,13 +3,16 @@ package com.example.lin_new_project;
 import static androidx.core.content.PermissionChecker.checkSelfPermission;
 
 import static com.example.lin_new_project.MyApplication.nfc;
+import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -30,6 +33,8 @@ import com.example.lin_new_project.fun.MsgEvent;
 import com.example.lin_new_project.fun.RxBus;
 import com.example.lin_new_project.viewBinding.BaseBindingActivity;
 import com.example.lin_new_project.webService.WebApi;
+
+import java.lang.reflect.Method;
 
 public class MainActivity extends BaseBindingActivity<ActivityMainBinding> {//416370
     public static MainActivity mainActivity;
@@ -187,5 +192,23 @@ public class MainActivity extends BaseBindingActivity<ActivityMainBinding> {//41
             }
         }
     }
-
+    public boolean commonROMPermissionCheck(Context context) {
+        Boolean result = true;
+        if (Build.VERSION.SDK_INT >= 23) {
+            try {
+                Class clazz = Settings.class;
+                Method canDrawOverlays = clazz.getDeclaredMethod("canDrawOverlays", Context.class);
+                result = (Boolean) canDrawOverlays.invoke(null, context);
+            } catch (Exception e) {
+                Log.e("TAG", Log.getStackTraceString(e));
+            }
+        }
+        return result;
+    }
+    //申請權限
+    public void requestAlertWindowPermission() {
+        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+        intent.setData(Uri.parse("package:" + getPackageName()));
+        startActivityForResult(intent, REQUEST_CODE);
+    }
 }

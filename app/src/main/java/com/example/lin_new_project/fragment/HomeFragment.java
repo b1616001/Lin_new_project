@@ -4,18 +4,30 @@ package com.example.lin_new_project.fragment;
 import static com.example.lin_new_project.MainActivity.mainActivity;
 import static com.example.lin_new_project.fun.CommonUtils.getColorByVERSION;
 import static com.example.lin_new_project.fun.CommonUtils.isConnected;
+import static com.example.lin_new_project.popupwindow.PopupWindowManager.showMediaMenu;
 import static com.example.lin_new_project.webService.WebApiParameter.getApi_Uid_Parameter;
+import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
+
+import static org.apache.commons.lang3.ClassUtils.getPackageName;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.LocationManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.example.lin_new_project.MainActivity;
 import com.example.lin_new_project.R;
@@ -25,12 +37,14 @@ import com.example.lin_new_project.databinding.FragmentHomeBinding;
 import com.example.lin_new_project.fun.GPSPositioningMethod;
 import com.example.lin_new_project.fun.RecyclerViewMethed;
 import com.example.lin_new_project.fun.TimeMethod;
+import com.example.lin_new_project.popupwindow.PopupWindowManager;
 import com.example.lin_new_project.viewBinding.BaseBindingFragment;
 import com.example.lin_new_project.webService.IWebApiPath;
 import com.example.lin_new_project.webService.WebApi;
 import com.example.lin_new_project.webService.data.UidData;
 import com.google.gson.Gson;
 
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -125,8 +139,53 @@ public class HomeFragment extends BaseBindingFragment<FragmentHomeBinding> {
                 case "18":
                     mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToTextUrlFragment(), 18);
                     break;
+                case "19":
+                    PopupWindowManager.showTextPopupWindow();
+                    break;
                 case "20":
                     mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToQrcodeFragment(), 20);
+                    break;
+                case "21":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToVolumetFragment(), 21);
+                    break;
+                case "22":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToScreenFragment(), 22);
+                    break;
+                case "23":
+                    mainActivity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//                    mainActivity.getSupportActionBar().hide(); //設定隱藏標題
+                    WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(mainActivity.getWindow(),
+                            mainActivity. getWindow().getDecorView());
+                    if (controller != null) {
+                        // 隱藏狀態列
+                        controller.hide(WindowInsetsCompat.Type.statusBars());
+                        // 設定行為為隱藏後滑動邊緣可暫時顯示（沉浸模式）
+                        controller.setSystemBarsBehavior(WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                    }
+//                    mainActivity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);//設定隱藏狀態
+                    break;
+                case "24":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToGifFragment(), 24);
+                    break;
+                case "25":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToWebViewFragment(), 25 );
+                    break;
+                case "26":
+                    if (!mainActivity.commonROMPermissionCheck(getContext())) {
+                        mainActivity.requestAlertWindowPermission();
+                    }else {
+                        showMediaMenu(true);
+                    }
+                    break;
+                case "27":
+                   String time="GMT+8:"+ TimeMethod.getTime_zone(TimeMethod.formatType,TimeMethod.zone_GMT_8)+
+                           "\nGMT+9:"+ TimeMethod.getTime_zone(TimeMethod.formatType,TimeMethod.zone_GMT_9)+
+                           "\nUTC:"+ TimeMethod.getTime_zone(TimeMethod.formatType,TimeMethod.zone_UTC);
+                    showToast(time);
+                    break;
+                case "29":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToGLSurfaceFragment(), 29 );
                     break;
             }
 
@@ -233,4 +292,6 @@ public class HomeFragment extends BaseBindingFragment<FragmentHomeBinding> {
 
         }
     }
+
+
 }
