@@ -109,6 +109,16 @@
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:destination="@id/GLSurfaceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_publicSpaceFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/publicSpaceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_scaleImageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/scaleImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/textFragment"
@@ -190,4 +200,12 @@
         android:id="@+id/GLSurfaceFragment"
         android:name="com.example.lin_new_project.fragment.GLSurfaceFragment"
         android:label="GLSurfaceFragment" />
+    <fragment
+        android:id="@+id/publicSpaceFragment"
+        android:name="com.example.lin_new_project.fragment.PublicSpaceFragment"
+        android:label="PublicSpaceFragment" />
+    <fragment
+        android:id="@+id/scaleImageFragment"
+        android:name="com.example.lin_new_project.fragment.ScaleImageFragment"
+        android:label="ScaleImageFragment" />
 </navigation>

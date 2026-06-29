@@ -312,9 +312,14 @@ public class AndroidQStorageSaveUtils {
 
     public static Intent doPickPhotoFromGallery(Context context) {
         try {
+//            final Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//            intent.addCategory(Intent.CATEGORY_OPENABLE);
+//            intent.setType("image/*");
 
+
+//
             final Uri uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-            final PackageManager packageManager = context.getPackageManager();
+            final PackageManager  packageManager = context.getPackageManager();
             final Intent intent = new Intent(Intent.ACTION_PICK, uri);
             List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
             if (list.size() > 0) {

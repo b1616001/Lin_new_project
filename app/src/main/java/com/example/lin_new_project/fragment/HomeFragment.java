@@ -184,8 +184,14 @@ public class HomeFragment extends BaseBindingFragment<FragmentHomeBinding> {
                            "\nUTC:"+ TimeMethod.getTime_zone(TimeMethod.formatType,TimeMethod.zone_UTC);
                     showToast(time);
                     break;
+                case "28":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToPublicSpaceFragment(), 28 );
+                    break;
                 case "29":
                     mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToGLSurfaceFragment(), 29 );
+                    break;
+                case "30":
+                    mainActivity.pageChangeNavController(HomeFragmentDirections.actionHomeFragmentToScaleImageFragment(), 30 );
                     break;
             }
 
